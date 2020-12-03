@@ -50,8 +50,10 @@ class BinarySearchTree<E> {
                 node = node.right;
             } else if (cmp < 0) {
                 node = node.left;
-            } else
+            } else {
+                node.element = element;
                 return;
+            }
         }
         Node<E> newNode = new Node<E>(element, parent);
         if (cmp > 0) {
