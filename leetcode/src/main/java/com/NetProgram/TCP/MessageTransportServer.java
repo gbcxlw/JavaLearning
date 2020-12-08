@@ -1,4 +1,4 @@
-package com.NetProgram;
+package com.NetProgram.TCP;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
