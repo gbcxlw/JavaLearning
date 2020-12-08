@@ -35,6 +35,10 @@ class BinarySearchTree<E> {
         return size == 0;
     }
 
+    public Node<E> getRoot() {
+        return root;
+    }
+
     public void add(E element) {
         if (root == null) {
             root = new Node<E>(element, null);
@@ -68,6 +72,14 @@ class BinarySearchTree<E> {
         if (this.comparator != null)
             return comparator.compare(e1, e2);
         return ((Comparable<E>) e1).compareTo(e2);
+    }
+
+    public void preOrderTraversal(Node<E> node) {
+        if (node == null)
+            return;
+        System.out.println(node.element);
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
     }
 
 }
