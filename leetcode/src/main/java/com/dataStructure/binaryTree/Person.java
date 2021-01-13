@@ -1,4 +1,4 @@
-package com.dataStructure;
+package com.dataStructure.binaryTree;
 
 public class Person implements Comparable<Person>{
     private String name;
