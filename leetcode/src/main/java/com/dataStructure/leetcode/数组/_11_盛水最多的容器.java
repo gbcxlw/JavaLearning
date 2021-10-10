@@ -25,4 +25,36 @@ public class _11_盛水最多的容器 {
         }
         return max;
     }
+
+    public int maxArea2(int[] height) {
+        int begin = 0;
+        int end = height.length - 1;
+        int maxArea = 0;
+        while (begin < end) {
+            int heigh = height[begin] <= height[end] ? height[begin] : height[end];
+            int curArea = heigh * (end - begin);
+            maxArea = maxArea >= curArea ? maxArea : curArea;
+            //在此处找到下一个离当前的矮端最近，并且比矮端大的数
+            if (height[begin] > height[end]) {
+                while (end > begin) {
+                    end --;
+                    if (height[end] > height[end + 1]) {
+                        break;
+                    }
+                }
+                continue;
+            }
+            if (height[begin] <= height[end]) {
+                while (end > begin) {
+                    begin ++;
+                    if (height[begin] > height[begin - 1]) {
+
+                        break;
+                    }
+                }
+            }
+
+        }
+        return maxArea;
+    }
 }
